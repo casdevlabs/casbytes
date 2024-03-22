@@ -1,0 +1,35 @@
+{
+  "title": "software design and architecture",
+  "slug": "software-design-and-architecture",
+  "published": false,
+  "type": "course",
+  "overview": "This course is designed to help you understand the fundamentals of data structures and algorithms.",
+  "modules": [
+    {
+      "title": "programming fundamentals",
+      "slug": "programming-fundamentals",
+      "examples": [
+        {
+          "title": "introduction",
+          "slug": "introduction"
+        }
+      ],
+      "exercises": [
+        {
+          "title": "programming fundamentals",
+          "slug": "programming-fundamentals"
+        },
+        {
+          "title": "towers of hanoi",
+          "slug": "towers-of-hanoi"
+        }
+      ],
+      "lessons": [
+        {
+          "title": "introduction",
+          "slug": "lintroduction"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Course {
+  id       String   @id @default(uuid())
+  title    String
+  slug     String   @unique
+  overview String
+  userId   String
+  score    Float    @default(0)
+  progress Int      @default(0)
+  modules  Module[]
+}
+
+model Module {
+  id         String     @id @default(uuid())
+  title      String
+  slug       String     @unique
+  userId     String
+  courseId   String
+  progress   Int        @default(0)
+  score      Float      @default(0)
+  status     String     @default("NOT_AVAILABLE")
+  checkpoint Float      @default(0)
+  course     Course     @relation(fields: [courseId], references: [id])
+  badges     Badge[]
+  lessons    Lesson[]
+  exanples   Example[]
+  exercises  Exercise[]
+}
+
+model Badge {
+  id       String  @id @default(uuid())
+  title    String
+  moduleId String
+  userId   String
+  module   Module  @relation(fields: [moduleId], references: [id])
+  active   Boolean @default(false)
+}
+
+model Example {
+  id       String @id @default(uuid())
+  title    String
+  slug     String @unique
+  moduleId String
+  userId   String
+  score    Float  @default(0)
+  module   Module @relation(fields: [moduleId], references: [id])
+  status   String @default("NOT_AVAILABLE")
+}
+
+model Exercise {
+  id       String @id @default(uuid())
+  title    String
+  slug     String @unique
+  moduleId String
+  userId   String
+  score    Float  @default(0)
+  module   Module @relation(fields: [moduleId], references: [id])
+  status   String @default("NOT_AVAILABLE")
+}
+
+model Lesson {
+  id       String @id @default(uuid())
+  title    String
+  slug     String @unique
+  userId   String
+  moduleId String
+  progress Int    @default(0)
+  score    Float  @default(0)
+  module   Module @relation(fields: [moduleId], references: [id])
+  quiz     String
+  status   String @default("NOT_AVAILABLE")
+}
+
+// model Quiz {
+//   id       String @id @default(uuid())
+//   slug     String @unique
+//   lessonId String @unique
+//   userId   String
+//   lesson   Lesson @relation(fields: [lessonId], references: [id])
+//   score    Float  @default(0)
+// }
+
+// enum STATUS {
+//   NOT_AVAILABLE
+//   AVAILABLE
+//   IN_PROGRESS
+//   COMPLETED
+// }
+
+// enum BADGES {
+//   BEGINNER
+//   INTERMEDIATE
+//   ADVANCED
+//   EXPERT
+// }

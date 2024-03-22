@@ -1,0 +1,41 @@
+{
+  "title": "fundamentals",
+  "published": false,
+  "overview": "This track covers the fundamentals of computer science, including the number system, computer architecture, memory management, operating systems, and version control.",
+  "modules": [
+    {
+      "title": "fundamentals introduction",
+      "examples": [],
+      "exercises": [],
+      "lessons": [
+        {
+          "title": "what is software engineering"
+        },
+        {
+          "title": "why software engineering matters"
+        },
+        {
+          "title": "differences between software engineering and software development"
+        },
+        {
+          "title": "software engineering key concepts and terminologies"
+        },
+        {
+          "title": "career opportunities in software engineering"
+        },
+        {
+          "title": "ethical and social considerations"
+        },
+        {
+          "title": "software engineering ethics"
+        },
+        {
+          "title": "history of computing"
+        },
+        {
+          "title": "case studies"
+        }
+      ]
+    }
+  ]
+}

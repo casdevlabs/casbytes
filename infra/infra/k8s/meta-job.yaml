@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: meta
+spec:
+  ttlSecondsAfterFinished: 10
+  template:
+    spec:
+      containers:
+        - name: meta
+          image: christophersesugh/casbytes-meta-dev
+          command: ["npm", "run", "seed"]
+          env:
+            - name: DATABASE_URL
+              value: postgres://postgres:3868-b554-4a6d-b67@simple:5432/
+              # valueFrom:
+              #   secretKeyRef:
+              #     name: database-url
+              #     key: DATABASE_URL
+      restartPolicy: Never
+  backoffLimit: 2

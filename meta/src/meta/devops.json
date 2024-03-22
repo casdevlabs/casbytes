@@ -1,0 +1,28 @@
+{
+  "title": "DevOps",
+  "published": false,
+  "overview": "devops overview",
+  "modules": [
+    {
+      "title": "kubernetes",
+      "examples": [
+        {
+          "title": "introduction"
+        }
+      ],
+      "exercises": [
+        {
+          "title": "programming fundamentals"
+        },
+        {
+          "title": "towers of hanoi"
+        }
+      ],
+      "lessons": [
+        {
+          "title": "introduction"
+        }
+      ]
+    }
+  ]
+}

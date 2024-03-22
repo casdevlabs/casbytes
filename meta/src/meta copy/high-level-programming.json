@@ -1,0 +1,35 @@
+{
+  "title": "high level programming",
+  "slug": "high-level-programming",
+  "published": false,
+  "type": "track",
+  "overview": "This track covers the basics of data structures and algorithms.",
+  "modules": [
+    {
+      "title": "programming fundamentals",
+      "slug": "programming-fundamentals",
+      "examples": [
+        {
+          "title": "introduction",
+          "slug": "introduction"
+        }
+      ],
+      "exercises": [
+        {
+          "title": "programming fundamentals",
+          "slug": "programming-fundamentals"
+        },
+        {
+          "title": "towers of hanoi",
+          "slug": "towers-of-hanoi"
+        }
+      ],
+      "lessons": [
+        {
+          "title": "introduction",
+          "slug": "lintroduction"
+        }
+      ]
+    }
+  ]
+}

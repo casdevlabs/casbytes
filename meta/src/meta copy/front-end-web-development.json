@@ -1,0 +1,30 @@
+{
+  "title": "front-end web development",
+  "slug": "front-end-web-development",
+  "published": false,
+  "type": "course",
+  "overview": "This course is designed to help you understand the fundamentals.",
+  "modules": [
+    {
+      "title": "programming fundamentals",
+      "slug": "programming-fundamentals",
+      "examples": [],
+      "exercises": [
+        {
+          "title": "programming fundamentals",
+          "slug": "programming-fundamentals"
+        },
+        {
+          "title": "towers of hanoi",
+          "slug": "towers-of-hanoi"
+        }
+      ],
+      "lessons": [
+        {
+          "title": "introduction",
+          "slug": "lintroduction"
+        }
+      ]
+    }
+  ]
+}

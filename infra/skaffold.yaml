@@ -1,0 +1,61 @@
+apiVersion: skaffold/v4beta9
+kind: Config
+metadata:
+  name: casbytes-infra
+build:
+  artifacts:
+    - image: christophersesugh/casbytes-auth-dev
+      context: ../casbytes-auth
+      docker:
+        dockerfile: Dockerfile.dev
+      sync:
+        manual:
+          - src: "src/**/*.ts"
+            dest: .
+
+    # - image: christophersesugh/casbytes-meta-dev
+    #   context: ../casbytes-meta
+    #   docker:
+    #     dockerfile: Dockerfile.dev
+    #   sync:
+    #     manual:
+    #       - src: "src/**/*.ts"
+    #         dest: .
+    # - image: christophersesugh/casbytes-content-dev
+    #   context: ../casbytes-content
+    #   docker:
+    #     dockerfile: Dockerfile.dev
+    #   sync:
+    #     manual:
+    #       - src: "src/**/*.ts"
+    #         dest: .
+
+    - image: christophersesugh/casbytes-mailer-dev
+      context: ../casbytes-mailer
+      docker:
+        dockerfile: Dockerfile.dev
+      sync:
+        manual:
+          - src: "src/**/*.ts"
+            dest: .
+
+    # - image: christophersesugh/casbytes-client-dev
+    #   context: ../casbytes-client
+    #   docker:
+    #     dockerfile: Dockerfile.dev
+    #   sync:
+    #     manual:
+    #       - src: "app/**/*.ts"
+    #         dest: .
+
+  local:
+    push: false
+manifests:
+  rawYaml:
+    - infra/k8s/ingress-nginx.yaml
+    - infra/k8s/rabbitmq.yaml
+    - infra/k8s/stackgres.yaml
+    # - infra/k8s/meta-job.yaml
+    - infra/k8s/mailer-depl.yaml
+    - infra/k8s/auth-depl.yaml
+    # - infra/k8s/client-depl.yaml

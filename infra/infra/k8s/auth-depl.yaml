@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth
+  template:
+    metadata:
+      labels:
+        app: auth
+    spec:
+      containers:
+        - name: auth
+          image: christophersesugh/casbytes-auth-dev
+          env:
+            - name: DATABASE_URL
+              value: postgres://postgres:6665-884e-475e-bcc@simple:5432/
+              # valueFrom:
+              #   secretKeyRef:
+              #     name: database-url
+              #     key: DATABASE_URL
+            - name: RABBITMQ_URL
+              value: "amqp://default_user_KXjz86i0SMny9Y9xjy-:QTY_qipOgtvym2KtipD9EGJGAZon1yb0@casbytes-rabbitmq"
+              # valueFrom:
+              #   secretKeyRef:
+              #     name: rabbitmq-url
+              #     key: RABBITMQ_URL
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_SECRET
+            - name: GITHUB_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: github-token
+                  key: GITHUB_TOKEN
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-srv
+spec:
+  selector:
+    app: auth
+  ports:
+    - name: auth
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

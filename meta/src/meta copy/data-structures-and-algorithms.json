@@ -1,0 +1,35 @@
+{
+  "title": "data structures and algorithms",
+  "slug": "data-structures-and-algorithms",
+  "published": false,
+  "type": "course",
+  "overview": "Data structures and algorithms are the building blocks of computer programming. They are essential to writing efficient and scalable code. This course will teach you the fundamentals of data structures and algorithms, and how to use them to solve real-world problems.",
+  "modules": [
+    {
+      "title": "programming fundamentals",
+      "slug": "programming-fundamentals",
+      "examples": [
+        {
+          "title": "introduction",
+          "slug": "introduction"
+        }
+      ],
+      "exercises": [
+        {
+          "title": "programming fundamentals",
+          "slug": "programming-fundamentals"
+        },
+        {
+          "title": "towers of hanoi",
+          "slug": "towers-of-hanoi"
+        }
+      ],
+      "lessons": [
+        {
+          "title": "introduction",
+          "slug": "lintroduction"
+        }
+      ]
+    }
+  ]
+}

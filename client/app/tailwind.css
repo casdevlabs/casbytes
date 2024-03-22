@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  box-sizing: border-box;
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+}
+
+code {
+  font-family: "Roboto Mono", monospace !important;
+  font-size: small !important;
+}
+
+.hljs {
+  border-radius: 8px 0 8px 8px;
+  padding: 1.5em;
+  font-size: small;
+}
+
+.hljs-inline {
+  background: #f0f0f0;
+  padding: 1px 2px;
+  border-radius: 5px;
+}
