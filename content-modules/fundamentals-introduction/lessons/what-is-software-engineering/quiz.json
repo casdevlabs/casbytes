@@ -1,0 +1,24 @@
+{
+  "questions": [
+    {
+      "question": "What is the capital of France?",
+      "answer": 1,
+      "options": ["Paris", "London", "Berlin", "Madrid"]
+    },
+    {
+      "question": "What is the capital of Germany?",
+      "answer": 2,
+      "options": ["Paris", "London", "Berlin", "Madrid"]
+    },
+    {
+      "question": "What is the capital of Spain?",
+      "answer": 3,
+      "options": ["Paris", "London", "Berlin", "Madrid"]
+    },
+    {
+      "question": "What is the capital of England?",
+      "answer": 4,
+      "options": ["Paris", "London", "Berlin", "Madrid"]
+    }
+  ]
+}
